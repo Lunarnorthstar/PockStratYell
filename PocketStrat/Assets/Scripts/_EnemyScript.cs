@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class _EnemyScript : MonoBehaviour
 {
     private NavMeshAgent _Agent;
+    [SerializeField] private GameObject _EnemySprite;
     [SerializeField] private int _Damage, _AtkSpd,_Health;
     private Transform _OriginalPos;
     [SerializeField] private List<GameObject> _Adventurers;
@@ -13,6 +14,7 @@ public class _EnemyScript : MonoBehaviour
     {
         _Agent = GetComponent<NavMeshAgent>();
         _OriginalPos = transform;
+        _EnemySprite = gameObject.transform.Find("EnemySprite").gameObject;
     }
 
     

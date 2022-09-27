@@ -8,12 +8,16 @@ public class _AdventurerScript : MonoBehaviour
 
     public int _Health, _Damage,_AtkSpd;
     private NavMeshAgent _Agent;
+    [SerializeField] private GameObject _AdventurerSprite;
+    [SerializeField] private Sprite[] _Sprites;
     [SerializeField] private List<GameObject> _Enemies;
     [SerializeField] private GameObject _EndObj;
     void Start()
     {
         _Agent = GetComponent<NavMeshAgent>();
         _Agent.SetDestination(_EndObj.transform.position);
+        _AdventurerSprite = gameObject.transform.Find("AdventurerSprite").gameObject;
+        _AdventurerSprite.GetComponent<SpriteRenderer>().sprite = _Sprites[Random.Range(0, _Sprites.Length)];
     }
 
     // Update is called once per frame
