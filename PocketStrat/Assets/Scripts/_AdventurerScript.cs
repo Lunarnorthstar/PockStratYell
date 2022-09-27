@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class _AdventurerScript : MonoBehaviour
 {
 
     public int _Health, _Damage,_AtkSpd;
     private NavMeshAgent _Agent;
+    [SerializeField] private GameObject _text;
+    [SerializeField] private string[] _Names;
     [SerializeField] private GameObject _AdventurerSprite;
     [SerializeField] private Sprite[] _Sprites;
     [SerializeField] private List<GameObject> _Enemies;
@@ -18,6 +21,7 @@ public class _AdventurerScript : MonoBehaviour
         _Agent.SetDestination(_EndObj.transform.position);
         _AdventurerSprite = gameObject.transform.Find("AdventurerSprite").gameObject;
         _AdventurerSprite.GetComponent<SpriteRenderer>().sprite = _Sprites[Random.Range(0, _Sprites.Length)];
+        _text.GetComponent<TextMeshProUGUI>().text = _Names[Random.Range(0, _Names.Length)];
     }
 
     // Update is called once per frame
