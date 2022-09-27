@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Adventurer
   - Enemy
+  - ResourceManager
   layers:
   - Default
   - TransparentFX
